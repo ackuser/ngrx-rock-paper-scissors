@@ -1,11 +1,14 @@
 import { Routes } from '@angular/router';
 
-import { MultiplayerComponent } from './multiplayer/multiplayer.component';
-import { SingleplayerComponent } from './singleplayer/singleplayer.component';
-
 export const appRoutes: Routes = [
-    { path: 'multiplayer', component: MultiplayerComponent },
-    { path: 'singleplayer', component: SingleplayerComponent },
+    {
+        path: 'multiplayer',
+        loadChildren: './multiplayer/multiplayer.module#MultiplayerModule'
+    },
+    {
+        path: 'singleplayer',
+        loadChildren: './singleplayer/singleplayer.module#SingleplayerModule'
+    },
     // {
     //     path: '',
     //     redirectTo: 'singleplayer',
