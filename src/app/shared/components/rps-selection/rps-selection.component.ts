@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core
 })
 export class RpsSelectionComponent implements OnChanges {
   @Input() visible: string;
-  @Input() player: string;
+  @Input() name: string;
   @Output() $weaponChosen = new EventEmitter<Object>();
   chosenWeapon: string;
 
@@ -20,7 +20,7 @@ export class RpsSelectionComponent implements OnChanges {
   endTurn() {
     this.$weaponChosen.emit({
       weapon: this.chosenWeapon,
-      player: this.player
+      name: this.name
     });
   }
 

@@ -3,6 +3,16 @@
   <div class="row">
 
     <div class="column">
+
+        <input type="text" [(ngModel)]="name" placeholder="player 2 name">
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="column">
         
         <div class="weapon-container" (click)="selectWeapon('rock')">
             <img [ngClass]="{'selected': chosenWeapon === 'rock'}" src="/assets/r.jpg" alt="">
