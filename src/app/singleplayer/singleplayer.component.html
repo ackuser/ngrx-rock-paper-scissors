@@ -1,5 +1,9 @@
-<p>
-  singleplayer works!
-</p>
+<app-rps-selection [visible]="player1Visible" [name]="'player1'" ($weaponChosen)="setPlayer1($event)"></app-rps-selection>
 
-<!--<app-rps-selection></app-rps-selection>-->
+<app-rps-selection [visible]="player2Visible" [name]="'player2'" ($weaponChosen)="setPlayer2($event)"></app-rps-selection>
+
+<div class="finish-game" *ngIf="!player1Visible && !player2Visible">
+    <button (click)="finishGame()">Complete Game</button>
+</div>
+
+<app-result-list></app-result-list>
