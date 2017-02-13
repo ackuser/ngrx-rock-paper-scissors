@@ -16,7 +16,12 @@ export class SingleplayerComponent implements OnInit {
   player1: Player;
   player2: Player;
   player1Visible: boolean = true;
-  player2Visible: boolean = false;
+  player2Visible: boolean = true;
+  weaponsArray: string[] = [
+    'rock',
+    'paper',
+    'scissors'
+  ];
 
   constructor(
     private _store: Store<AppState>
@@ -28,13 +33,8 @@ export class SingleplayerComponent implements OnInit {
 
   setPlayer1($event: Player) {
     this.player1 = new Player($event.name, $event.weapon);
+    this.player2 = new Player('computer', this.weaponsArray[this.getRandomInt(1, 3)]);
     this.player1Visible = false;
-    this.player2Visible = true;
-  }
-
-  setPlayer2($event: Player) {
-    this.player2Visible = false;
-    this.player2 = new Player($event.name, $event.weapon);
   }
 
   finishGame() {
@@ -44,6 +44,10 @@ export class SingleplayerComponent implements OnInit {
     this.player2Visible = true;
   }
 
-
+  getRandomInt(min, max) {
+    //Will return a number inside the given range, inclusive of both minimum and maximum
+    //i.e. if min=0, max=20, returns a number from 0-20
+    return (Math.floor(Math.random() * (max - min + 1)) + min) - 1;
+  }
 
 }
