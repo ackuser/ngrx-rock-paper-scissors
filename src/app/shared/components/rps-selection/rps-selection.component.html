@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="column">
+        
+        <div class="weapon-container" (click)="selectWeapon('rock')">
+            <img [ngClass]="{'selected': chosenWeapon === 'rock'}" src="/assets/r.jpg" alt="">
+        </div>
+
+    </div>
+    <div class="column">
+        
+        <div class="weapon-container" (click)="selectWeapon('paper')">
+            <img [ngClass]="{'selected': chosenWeapon === 'paper'}" src="/assets/p.jpg" alt="">
+        </div>
+
+    </div>
+    <div class="column">
+        
+        <div class="weapon-container" (click)="selectWeapon('scissors')">
+            <img [ngClass]="{'selected': chosenWeapon === 'scissors'}" src="/assets/s.jpg" alt="">
+        </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="column end-turn-button">
+
+        <button *ngIf="chosenWeapon" (click)="endTurn()">End Turn</button>
+
+    </div>
+
+  </div>
+
+</div>
