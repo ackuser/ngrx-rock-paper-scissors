@@ -2,6 +2,10 @@ import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
     {
+        path: '',
+        loadChildren: './home/home.module#HomeModule'
+    },
+    {
         path: 'multiplayer',
         loadChildren: './multiplayer/multiplayer.module#MultiplayerModule'
     },
@@ -9,10 +13,4 @@ export const appRoutes: Routes = [
         path: 'singleplayer',
         loadChildren: './singleplayer/singleplayer.module#SingleplayerModule'
     },
-    // {
-    //     path: '',
-    //     redirectTo: 'singleplayer',
-    //     pathMatch: 'full'
-    // },
-    //   { path: '**', component: PageNotFoundComponent }
 ];
